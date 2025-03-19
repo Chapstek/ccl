@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavy Duty Rentals - Equipment Rental Services</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        nav a:hover {
+            color: #ff6600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #f4f4f4;
+            padding: 40px 15px;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 2em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .hero button {
+            padding: 10px 20px;
+            background: #ff6600;
+            color: white;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .hero button:hover {
+            background: #e65c00;
+        }
+
+        /* Equipment Catalog */
+        .equipment {
+            padding: 30px 15px;
+            text-align: center;
+            background: #fff;
+        }
+        .equipment h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .equipment-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .equipment-item {
+            width: 100%;
+            max-width: 300px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .equipment-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .equipment-item h4 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .equipment-item p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 30px 15px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        .pricing h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background: #333;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #fff;
+        }
+
+        /* About Section */
+        .about {
+            padding: 30px 15px;
+            text-align: center;
+            background: #fff;
+        }
+        .about h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 30px 15px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        .contact h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .contact form {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .contact label {
+            display: block;
+            margin: 8px 0 4px;
+            font-size: 0.95em;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .contact button {
+            padding: 10px 20px;
+            background: #ff6600;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            max-width: 200px;
+        }
+        .contact button:hover {
+            background: #e65c00;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 30px 15px;
+            text-align: center;
+            background: #fff;
+        }
+        .faq h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            max-width: 600px;
+            margin: 15px auto;
+            text-align: left;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) { /* Tablets */
+            header h1 {
+                font-size: 1.5em;
+            }
+            nav a {
+                margin: 0 8px;
+                font-size: 0.9em;
+            }
+            .hero h2 {
+                font-size: 1.6em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .equipment h3, .pricing h3, .about h3, .contact h3, .faq h3 {
+                font-size: 1.5em;
+            }
+            table {
+                font-size: 0.85em;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) { /* Smartphones */
+            header {
+                padding: 10px;
+            }
+            header h1 {
+                font-size: 1.2em;
+            }
+            nav {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+            nav a {
+                margin: 5px 0;
+                font-size: 0.85em;
+            }
+            .hero {
+                padding: 20px 10px;
+            }
+            .hero h2 {
+                font-size: 1.4em;
+            }
+            .hero p {
+                font-size: 0.9em;
+            }
+            .hero button {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+            .equipment, .pricing, .about, .contact, .faq {
+                padding: 20px 10px;
+            }
+            .equipment h3, .pricing h3, .about h3, .contact h3, .faq h3 {
+                font-size: 1.3em;
+            }
+            .equipment-item {
+                max-width: 100%;
+            }
+            table {
+                font-size: 0.75em;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .contact form {
+                padding: 0 10px;
+            }
+            .contact button {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+	    <h1>Chaganti Constructions Ltd</h1>
+        <h1>Heavy Duty Rentals</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#equipment">Equipment</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h2>Rent Heavy Equipment for Your Next Project</h2>
+        <p>Reliable Vibrational Rollers, Graders, Excavators, and More – Delivered to Your Site</p>
+        <button onclick="window.location.href='#contact'">Get a Quote Now</button>
+    </section>
+
+    <!-- Equipment Catalog -->
+    <section class="equipment" id="equipment">
+        <h3>Our Heavy Duty Equipment</h3>
+        <div class="equipment-grid">
+            <div class="equipment-item">
+                <img src="vibrational_roller.jpg" alt="Vibrational Roller">
+                <h4>Vibrational Rollers</h4>
+                <p>Perfect for compacting soil or asphalt.</p>
+                <p><strong>Daily:</strong> $250 | <strong>Monthly:</strong> $5,000</p>
+            </div>
+            <div class="equipment-item">
+                <img src="grader.jpg" alt="Grader">
+                <h4>Graders</h4>
+                <p>Precision grading for roads and surfaces.</p>
+                <p><strong>Daily:</strong> $300 | <strong>Monthly:</strong> $6,000</p>
+            </div>
+            <div class="equipment-item">
+                <img src="backhoe_loader.jpg" alt="Backhoe Loader">
+                <h4>Backhoe Loaders</h4>
+                <p>Versatile digging and loading.</p>
+                <p><strong>Daily:</strong> $200 | <strong>Monthly:</strong> $4,500</p>
+            </div>
+            <div class="equipment-item">
+                <img src="excavator.jpg" alt="Excavator">
+                <h4>Excavators</h4>
+                <p>Heavy-duty digging power.</p>
+                <p><strong>Daily:</strong> $350 | <strong>Monthly:</strong> $7,000</p>
+            </div>
+            <div class="equipment-item">
+                <img src="jackhammer.jpg" alt="Excavator Jackhammer">
+                <h4>Excavator Jackhammers</h4>
+                <p>Break through concrete with ease.</p>
+                <p><strong>Daily:</strong> $150 | <strong>Monthly:</strong> $3,000</p>
+            </div>
+        </div>
+        <p style="margin-top: 20px;">Contact us to reserve your equipment today!</p>
+    </section>
+
+    <!-- Pricing & Mobilization -->
+    <section class="pricing" id="pricing">
+        <h3>Pricing & Delivery</h3>
+        <p>All rates include mobilization to your construction site within a 50-mile radius. Additional mileage: $2/mile.</p>
+        <table>
+            <tr>
+                <th>Equipment</th>
+                <th>Daily Rate</th>
+                <th>Monthly Rate</th>
+                <th>Mobilization Fee (Included)</th>
+            </tr>
+            <tr>
+                <td>Vibrational Rollers</td>
+                <td>$250</td>
+                <td>$5,000</td>
+                <td>Up to 50 miles</td>
+            </tr>
+            <tr>
+                <td>Graders</td>
+                <td>$300</td>
+                <td>$6,000</td>
+                <td>Up to 50 miles</td>
+            </tr>
+            <tr>
+                <td>Backhoe Loaders</td>
+                <td>$200</td>
+                <td>$4,500</td>
+                <td>Up to 50 miles</td>
+            </tr>
+            <tr>
+                <td>Excavators</td>
+                <td>$350</td>
+                <td>$7,000</td>
+                <td>Up to 50 miles</td>
+            </tr>
+            <tr>
+                <td>Jackhammers</td>
+                <td>$150</td>
+                <td>$3,000</td>
+                <td>Up to 50 miles</td>
+            </tr>
+        </table>
+        <p><em>Rates subject to change based on availability and project duration.</em></p>
+    </section>
+
+    <!-- About Us -->
+    <section class="about" id="about">
+        <h3>About Heavy Duty Rentals</h3>
+        <p>With over 10 years in the industry, Heavy Duty Rentals provides top-tier equipment to power your construction projects. We prioritize reliability, fast delivery, and competitive pricing.</p>
+    </section>
+
+    <!-- Contact Us -->
+    <section class="contact" id="contact">
+        <h3>Get in Touch</h3>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="location">Project Location:</label>
+            <input type="text" id="location" name="location" required>
+            <label for="equipment">Equipment Needed:</label>
+            <input type="text" id="equipment" name="equipment" required>
+            <label for="duration">Rental Duration:</label>
+            <textarea id="duration" name="duration" rows="3" required></textarea>
+            <button type="submit">Submit Inquiry</button>
+        </form>
+        <p style="margin-top: 20px;">Address: Plot No 26. Palonaliomit Road, Lusaka</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>What’s included in the mobilization fee?</h4>
+            <p>Delivery and setup within 50 miles of our location.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I extend my rental?</h4>
+            <p>Yes, contact us to adjust your rental terms.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact Us: +260971688888/+260971744444 | chaganticonstruction@gmail.com</p>
+        <p>© 2025 Heavy Duty Rentals. All rights reserved.</p>
+    </footer>
+</body>
+</html>
